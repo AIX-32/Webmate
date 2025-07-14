@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+<link rel="icon" href="./img/favicon.ico">
+  <title>Webmate 0.6</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+    .box {
+      width: 30%;
+      color: #fff;
+      background-color: #39C5BB;
+      border-radius: 75px;
+      padding: 24px 48px;
+      margin-bottom: 24px;
+    }
+h1 {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 50px;
+    width: 30%; 
+    font-weight: bold;
+    
+}
+.grid2by2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  width: 30%; 
+} 
+
+    .openbutton {
+      font-size: 32px;
+      font-family: 'Special Gothic Expanded One', sans-serif;
+      padding: 24px 48px;
+      border: none;
+      border-radius: 75px 15px 15px 15px;
+      background-color: #39C5BB;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      
+    }
+    .openbutton span {
+  display: inline-block;
+  transform: scaleY(1.5);
+  transform-origin: center;
+}
+
+    .exbutton {
+      font-size: 36px;
+      padding: 24px 48px;
+      border: none;
+      min-width: 250px;
+      min-height: 250px;
+      background-color: #b6fffa19;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .exbutton:nth-child(2) {
+      border-radius:  15px 75px 15px 15px;
+    }
+    .exbutton:nth-child(3) {
+      border-radius:  15px 15px 15px 75px;
+    }
+    .exbutton:nth-child(4) {
+      border-radius:  15px 15px 75px 15px ;
+    }
+    button:hover {
+      background-color: #2E9E8F;
+    }   
+  </style>
+</head>
+<body>
+    <div class="box">
+  <h1>Summon Your Webmate!</h1>
+  </div> 
+  <div class="grid2by2">
+    <button onclick="openCompanion()" class="openbutton"><span>Summon</span></button>
+    <button onclick="sorry()" class="exbutton">Mate</button>
+    <button onclick="sorry()" class="exbutton">About</button>
+    <button onclick="sorry()" class="exbutton">Discord</button>
+  </div>
+
+  <script>
+    function openCompanion() {
+      const width = 200;
+      const height = 200;
+      const left = screenX + 150;
+      const top = screenY + 150;
+
+      const win = window.open(
+        'companion.html',
+        'companionWindow',
+        `width=${width},height=${height},left=${left},top=${top},resizable=no,scrollbars=no,toolbar=no,menubar=no,status=no,location=no`
+      );
+
+      if (!win) {
+        alert("Popup blocked! Please allow popups for this site.");
+      }
+    }
+    function sorry() {
+      alert("Sorry im working on adding this soon");
+    }
+  </script>
+</body>
+</html>
